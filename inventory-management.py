@@ -14,8 +14,18 @@
 
 #THIS PROJECT IS MADE BY REFERING THE INVENTORY OF A COMPANY MAKING CLOTHES
 
-#THIS IS LOGIN WHERE WE CHECK IF THE USER IS ADMIN COZ ADMIN IS HAVING COMPLETE PREVILAGE
 import json
+recordsLength = 0
+data = None
+with open("records.json") as f:
+    data = json.load(f)
+    recordsLength = len(data)
+
+
+
+
+#THIS IS LOGIN WHERE WE CHECK IF THE USER IS ADMIN COZ ADMIN IS HAVING COMPLETE PREVILAGE
+
 
 def authenticate():
     userName = input("Enter your user name : ")
@@ -28,13 +38,25 @@ def authenticate():
 #DISPLAY METHOD WILL TAKE THE VALUES AND THEN DISPLAY THEM
 def display():
     #1. EXPLAIN FROM HERE TO ....
-    inputvalues = input("1. Type\n2. Gender\n3. Item type\n4. Item\n5. Quantity\n6. Price\n7. Profit\n8. Max Quantity\nEnter the corresponding number(s) seperated using commas  :  ").split(" " or ",")
+    inputvalues = "1   , 2 ,, 3 ,, 25,".replace(" ","").split((",")) #input("1. Type\n2. Gender\n3. Item type\n4. Item\n5. Quantity\n6. Price\n7. Profit\n8. Max Quantity\nEnter the corresponding number(s) seperated using commas  :  ").replace(" ","").split((","))
     truelist = []
     print(inputvalues)
     for i in inputvalues:
-        truelist.append(i) if i.isnumeric() else None
+        truelist.append(i) if (i.isnumeric() and int(i) <= 8 and int(i) > 0) else None
     print(truelist)
-    #1. CONTINUE .... HERE THESE CODE WILL TACKLE INPUTS LIKE[(1   , 2 ,, 3),(2 5,55 4 ,),ETC]
+    #1. CONTINUE .... HERE THESE CODE WILL TACKLE INPUTS LIKE[(1   , 2 ,, 3),(2 5,55 4 ,),ETC] and number <= len(records.json)
+    print(recordsLength)
+    dispValLen = (input("Enter the Range : ") or str(recordsLength))
+    mapValues = {"1":"type","2":"gender","3":"item_type","4":"item","5": "quantity","6":"price","7":"profit","8": "max_quantity"}
+    getDictVal = ""
+    for i in truelist:
+        stri = "data['i']"
+        stri += "['" + "{value}".format(value = mapValues[i]) + "']"
+        getDictVal += stri + ","
+    print(getDictVal)
+    for i in range(1,int(dispValLen)+1):
+        pass
+
 
 
 
@@ -46,9 +68,6 @@ def display():
 display()
 
 
-# with open("records.json") as f:
-#     data = json.load(f)
-#     print(data["10"])
 
 
 
