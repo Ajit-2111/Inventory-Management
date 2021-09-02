@@ -25,9 +25,32 @@ def authenticate():
 # userIs = authenticate() #admin IF USER IS PASSING ADMIN'S USERNAME AND PASSWORD ELSE USERNAME
 # print(userIs)
 
-with open("records.json") as f:
-    data = json.load(f)
-    print(data["raw_materials"])
+#DISPLAY METHOD WILL TAKE THE VALUES AND THEN DISPLAY THEM
+def display():
+    #1. EXPLAIN FROM HERE TO ....
+    inputvalues = input("1. Type\n2. Gender\n3. Item type\n4. Item\n5. Quantity\n6. Price\n7. Profit\n8. Max Quantity\nEnter the corresponding number(s) seperated using commas  :  ").split(" " or ",")
+    truelist = []
+    print(inputvalues)
+    for i in inputvalues:
+        truelist.append(i) if i.isnumeric() else None
+    print(truelist)
+    #1. CONTINUE .... HERE THESE CODE WILL TACKLE INPUTS LIKE[(1   , 2 ,, 3),(2 5,55 4 ,),ETC]
+
+
+
+
+
+
+
+
+display()
+
+
+# with open("records.json") as f:
+#     data = json.load(f)
+#     print(data["10"])
+
+
 
 
 
