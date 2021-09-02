@@ -1,0 +1,42 @@
+{
+  "inventory":
+  [
+    {"00001":{"type":"raw_materials","gender":"null","item_type":"thread","item":"cotton_thread","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00002":{"type":"raw_materials","gender":"null","item_type":"thread","item":"rayon_thread","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00003":{"type":"raw_materials","gender":"null","item_type":"thread","item":"silk_thread","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00004":{"type":"raw_materials","gender":"null","item_type":"thread","item":"linen_thread","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00005":{"type":"raw_materials","gender":"null","item_type":"thread","item":"polyester_thread","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00006":{"type":"raw_materials","gender":"null","item_type":"thread","item":"nylon_thread","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00007":{"type":"raw_materials","gender":"null","item_type":"dyes","item":"natural_dye","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00008":{"type":"raw_materials","gender":"null","item_type":"dyes","item":"acid_dye","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00009":{"type":"raw_materials","gender":"null","item_type":"dyes","item":"all_purpose_dye","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00010":{"type":"raw_materials","gender":"null","item_type":"fabric","item":"canvas_fabric","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00011":{"type":"raw_materials","gender":"null","item_type":"fabric","item":"cashmere_fabric","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00012":{"type":"raw_materials","gender":"null","item_type":"fabric","item":"chiffon_fabric","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00013":{"type":"raw_materials","gender":"null","item_type":"fabric","item":"cotton_fabric","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00014":{"type":"raw_materials","gender":"null","item_type":"fabric","item":"linen_fabric","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00015":{"type":"raw_materials","gender":"null","item_type":"fabric","item":"spandex_fabric","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00016":{"type":"raw_materials","gender":"null","item_type":"fabric","item":"velvet_fabric","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00017":{"type":"products","gender":"male","item_type":"pants","item":"trousers","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00018":{"type":"products","gender":"male","item_type":"pants","item":"jeans","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00019":{"type":"products","gender":"male","item_type":"pants","item":"track_pants","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00020":{"type":"products","gender":"male","item_type":"shirts","item":"denim_shirt","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00021":{"type":"products","gender":"male","item_type":"shirts","item":"t_shirt","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00022":{"type":"products","gender":"male","item_type":"shirts","item":"shirt","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00023":{"type":"products","gender":"female","item_type":"dress","item":"dress","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00024":{"type":"products","gender":"female","item_type":"saree","item":"saree","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00025":{"type":"products","gender":"female","item_type":"shirts","item":"t-shirt","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00026":{"type":"products","gender":"female","item_type":"shirts","item":"hoodie","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00027":{"type":"products","gender":"female","item_type":"pants","item":"jeans","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00028":{"type":"products","gender":"children","item_type":"shirts","item":"t_shirt","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00029":{"type":"products","gender":"children","item_type":"shirts","item":"polos","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00030":{"type":"products","gender":"children","item_type":"dress","item":"dress","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00031":{"type":"products","gender":"children","item_type":"dress","item":"frock","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00032":{"type":"products","gender":"children","item_type":"pants","item":"denim","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00033":{"type":"products","gender":"children","item_type":"pants","item":"jeans","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00034":{"type":"products","gender":"children","item_type":"pants","item":"shorts","quantity":"100","price":"100","profit":"10","max_quantity":"500"}},
+    {"00035":{"type":"products","gender":"children","item_type":"pants","item":"trousers","quantity":"100","price":"100","profit":"10","max_quantity":"500"}}
+
+
+  ]
+}
