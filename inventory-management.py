@@ -70,6 +70,8 @@ def buying():
         if i['type'] == 'products':
             itemlist = [i['gender'],i["item"],i["price"],i["quantity"]]
             productlist.append(itemlist)
+
+    print(productlist)
     for i in range(len(productlist)):
         print("No. : ",i+1,'  ','Gender : ',productlist[i][0],'  ','Item : ',productlist[i][1],"  ",'Price : ',productlist[i][2])
     print('Enter the corresponding numbers of items which you want to buy : ')
@@ -89,6 +91,7 @@ def buying():
 
 def bill(cart,prodlist):
     finalprice = []
+
     for i in range(len(cart)):
         cartithkey = cart[i][0]
         cartithvalue = cart[i][1]
@@ -100,29 +103,41 @@ def bill(cart,prodlist):
             quantityless = input('Do you want to buy them ? ( y / n) : ')
             if quantityless == 'y':
                 cart[i][1]= productquantity
-                prodlist[cartithkey - 1][3] = 0
+                prodlist[cart[i][0] - 1][3] = 0
                 finalprice.append(productprice * productquantity)
                 continue
             else:
                 continue
         finalprice.append(productprice * cartithvalue)
+        prodlist[cartithkey - 1][3] = productquantity - cartithvalue
+
         print("FINAL PRICE : ",finalprice)
+
     print('paid value = ',finalprice)
+    count = 0
+    for i in data.values():
+        if i['type'] == 'products':
+            i["quantity"] = str(prodlist[count][3])
+            count += 1
 
 
 
     print('\n\n---------  ',userIs,"'s  Bill  ---------\n")
-    print(" Item   Quantity   Price")
+    print(" Item    Quantity   Price\n")
     for i in range(len(cart)):
         print(prodlist[cart[i][0] - 1][1],"  ", cart[i][1],"  ",finalprice[i])
     print("\nTotal Price =  Rs. ",sum(finalprice))
     print('\n\n---------  Abc Clothings  ---------\n')
+    print("prodlist",prodlist)
+    print("Data",data)
+    with open("records.json","w") as f:
+        json.dump(data,f)
 
 
 
 
-
-
+#HOW TO CHANGE THE QUANTITY OF PRODLIST TO DATA VARIABLE ?
+#USE LOOP AND LOOP THROUGH DATA WHEN IN DATA TYPE == PRODUCTS THEN UPDATE ITS QUANTITY VALUE WITH PRODLIST QUANTITY VALUES.
 
 
 
@@ -133,6 +148,6 @@ userIs = authenticate() #admin IF USER IS PASSING ADMIN'S USERNAME AND PASSWORD 
 with open("records.json", "r") as f:
     data = json.load(f)
     recordsLength = len(data)
-
+print(data)
 welcome(userIs)
 
