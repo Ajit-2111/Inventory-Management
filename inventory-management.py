@@ -1,23 +1,21 @@
 #THIS PROJECT IS MADE BY REFERING THE INVENTORY OF A COMPANY MAKING CLOTHES
-# TO DO :
-#ADD VERIFIER TO CHECK IF THE NUMBER ENTERED IS IN RANGE AND IS VALID FOR WHOLE WELCOME PAGE
-#ADD SOME STYLE TO THE PRINT STATEMENTS
-#SAVE DATA TO SALES.JSON FILE WHEN THE BILL FUNCTION IS ENDING
-
 
 import json
+from datetime import datetime
+import pytz
+
+tz_NY = pytz.timezone('Asia/Kolkata')
 
 #THIS IS LOGIN WHERE WE CHECK IF THE USER IS ADMIN COZ ADMIN IS HAVING COMPLETE PREVILAGE
 def authenticate():
     userName = input("Enter your user name : ")
     password = input("Enter your password : ")
     return 'trueadmin' if (userName =='admin' and password == 'admin123') else userName
-
+#HERE WE WELCOME THE USER AND DISPLAY THE VARIOUS OPTIONS AVAILABLE TO THEM
 def welcome(user):
-
-    print("Hello ",user)
+    print("\nHello ",user)
     if userIs == "trueadmin":
-        print("What do you want to do ?\n1. Display Record\n2. Buy Items\n3. Delete Records\n4. Update Records\n5. Add to Records\n6. Quit")
+        print("What do you want to do ?\n1. Display Record\n2. Buy Items\n3. Delete Records\n4. Update Records\n5. Add to Records\n6. Display Sales\n7. Quit")
         userchoice = input("Enter the corresponding number  : ")
         if userchoice == '1':
             display()
@@ -30,8 +28,9 @@ def welcome(user):
         elif userchoice == '5':
             addtorecord()
         elif userchoice == '6':
+            displaysales()
+        elif userchoice == '7':
             quit()
-
     else:
         print("What do you want to do ?\n1. Display Record\n2. Buy Items\n3. Quit")
         userchoice = input("Enter the corresponding number  : ")
@@ -41,9 +40,6 @@ def welcome(user):
             buying()
         elif userchoice == '3':
             quit()
-
-
-
 
 #DISPLAY METHOD WILL TAKE THE VALUES AND THEN DISPLAY THEM
 def display():
@@ -110,7 +106,6 @@ def buying():
         if buymore == 'y':
             continue
         commit = input('Do you want to buy these products (y / n) : ')
-        print("CART : ",cart)
         if commit == 'y':
             bill(cart,productlist)
         else:
@@ -123,7 +118,6 @@ def bill(cart,prodlist):
         cartithvalue = cart[i][1]
         productprice = int(prodlist[cartithkey - 1][2])
         productquantity = int(prodlist[cartithkey - 1][3])
-        print("productprice : ",productprice,"productquantity :",productquantity)
         if cartithvalue > productquantity:
             print('We have ',productquantity," ",prodlist[cartithkey - 1][1]," only.")
             quantityless = input('Do you want to buy them ? ( y / n) : ')
@@ -137,9 +131,6 @@ def bill(cart,prodlist):
         finalprice.append(productprice * cartithvalue)
         prodlist[cartithkey - 1][3] = productquantity - cartithvalue
 
-        print("FINAL PRICE : ",finalprice)
-
-    print('paid value = ',finalprice)
     count = 0
     for i in data.values():
         if i['type'] == 'products':
@@ -152,17 +143,19 @@ def bill(cart,prodlist):
         print(prodlist[cart[i][0] - 1][1],"  ", cart[i][1],"  ",finalprice[i])
     print("\nTotal Price =  Rs. ",sum(finalprice))
     print('\n\n---------  Abc Clothings  ---------\n')
-    print("prodlist",prodlist)
-    print("Data",data)
-
-    with open("records.json","w") as f:
-        json.dump(data,f)
-
     writetojson('records.json',data)
+    datetime_NY = datetime.now(tz_NY)
+    timestamp = datetime_NY.strftime("%d-%b-%Y-%a-%H:%M:%S")
+    tax = '5%' if sum(finalprice) < 1000 else '12%'
+    buyed = {}
+    for i in range(len(cart)):
+        buyed[prodlist[i + 1][1]] = cart[i][1]
+
+    salesrec[len(salesrec)+1] = {'time':timestamp,'buyer': userIs,'order':buyed,'paid':sum(finalprice),'tax':tax}
+    writetojson("sales.json",salesrec)
     welcome(userIs)
 
 def deleterecord():
-
     for i in range(len(data)):
         print(i + 1, "  ", data[str(i + 1)])
 
@@ -181,7 +174,6 @@ def deleterecord():
     for i in data.values():
         newdataset.update({str(count): i})
         count += 1
-    print(newdataset)
     writetojson("records.json",newdataset)
     welcome(userIs)
 
@@ -196,7 +188,6 @@ def updaterecord():
         attrtoedit = input('Enter the corresponding number : ')
         attrtoeditvalue = input('Enter the new value : ')
         data[itemtoupdate][valuemap[attrtoedit]] = attrtoeditvalue
-        print(data)
         updatemore = input('Do you want to update more ?  :  ')
     writetojson('records.json',data)
     welcome(userIs)
@@ -219,8 +210,42 @@ def addtorecord():
     maxquantityvalue = input('Enter the Max Quantity : ')
     maxquantityvalue = 'null' if (maxquantityvalue == '' or maxquantityvalue == ' ') else maxquantityvalue
     data[len(data)+1] = {'type': typevalue,'gender':gendervalue,'item_type':itemtypevalue,'item':itemvalue,'quantity':quantityvalue,'price':pricevalue,'profit':profitvalue,'max_quantity':maxquantityvalue}
-    print(data)
     writetojson('records.json',data)
+    welcome(userIs)
+
+def displaysales():
+    dispsalesinp = input('How do you want to see the sale ?\n1. See sales for year\n2. See sales for month\n3. See sales by price\n4. See All\nEnter the corresponding number : ')
+    if dispsalesinp == '1':
+        startyearinp = input('Enter the start year (Record starts from 2019)  :  ')
+        endyearinp = input('Enter the end year :  ')
+        for i in salesrec.values():
+            gettime = i['time']
+            if int(gettime[7:11]) >= int(startyearinp) and int(gettime[7:11]) <= int(endyearinp):
+                print(' Time : ', i['time'], ' Buyer : ', i['buyer'], ' Order(s) : ', i['order'], ' tax : ', i['tax'])
+
+    if dispsalesinp == '2':
+        yearinp = int(input('Enter first three initials of the month\nEnter the year :  '))
+        startmoninp = input('Enter the start month :  ').capitalize()
+        endmoninp = input('Enter the end month :  ').capitalize()
+        month = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+        for i in salesrec.values():
+            gettime = i['time']
+            if int(gettime[7:11]) == int(yearinp) and month.index(gettime[3:6]) >= month.index(startmoninp) and month.index(gettime[3:6]) <= month.index(endmoninp):
+                print(' Time : ', i['time'], ' Buyer : ', i['buyer'], ' Order(s) : ', i['order'],"  paid : ",i['paid'] , ' tax : ', i['tax'])
+
+    if dispsalesinp == '3':
+        minpriceinp = int(input('Enter the minimum price :  '))
+        maxpriceinp = int(input('Enter the maximum price :  '))
+        for i in salesrec.values():
+            getprice = int(i['paid'])
+            if getprice >= minpriceinp and getprice <= maxpriceinp:
+                print(' Time : ', i['time'], ' Buyer : ', i['buyer'], ' Order(s) : ', i['order'],"  paid : ",i['paid'] ,' tax : ', i['tax'])
+
+    if dispsalesinp == '4':
+        for i in salesrec.values():
+            print(' Time : ',i['time'],' Buyer : ',i['buyer'],' Order(s) : ',i['order'],"  paid : ",i['paid'] ,' tax : ',i['tax'])
+
+
     welcome(userIs)
 
 def writetojson(jsonfile,fromvar):
@@ -233,6 +258,8 @@ userIs = authenticate() #admin IF USER IS PASSING ADMIN'S USERNAME AND PASSWORD 
 with open("records.json", "r") as f:
     data = json.load(f)
     recordsLength = len(data)
-print(data)
+with open("sales.json", "r") as f:
+    salesrec = json.load(f)
+
 welcome(userIs)
 
