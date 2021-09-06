@@ -20,7 +20,9 @@ This is an example of which type of data and how the data is stored in the recor
 This is an example of which data and how the data is stored in this sales.json file.
 
 
-## Features for Admin (For Admin Previlages use username = admin and password = admin123)
+At first the program will ask for username and password you can type anything but For Admin Previlages use username = admin and password = admin123.
+
+## Features for Admin 
 1. Display Record
 2. Buy Items
 3. Delete Records
@@ -81,9 +83,22 @@ Adin will see all the record and then he will be asked to enter the record numbe
 ![update](https://user-images.githubusercontent.com/77968856/132244069-fa4e19a8-8fb1-44cc-aa93-859f867aef36.jpg)
  
 
-## 4. Add to Records
+## 5. Add to Records
+![add record](https://user-images.githubusercontent.com/77968856/132244480-2b16de21-76d1-4681-9dd9-2b5724dcdeb6.jpg)
+
+The admin has to provide all these details to create a new record element. The attribute which will be left blank will get the null value in the record.
+
+## 6. Display Sales
+
+![sales](https://user-images.githubusercontent.com/77968856/132244887-21c61212-e83b-4838-8993-7310923a50da.jpg)
+
+Admin can see the details for months, years , price ,all. For months, years , price option they must provide start and end of the range to display the sales.
 
 
+If you face any problem you can contact me on :
+Gmail Account : ajitcc07@gmail.com
+
+Linkedin : www.linkedin.com/in/ajitchoudhary
 
 
 
