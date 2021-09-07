@@ -207,13 +207,13 @@ def addtorecord():
     itemvalue = input('Enter the Item : ')
     itemvalue = 'null' if (itemvalue == '' or itemvalue == ' ') else itemvalue
     quantityvalue = input('Enter the Quantity : ')
-    quantityvalue = 'null' if (quantityvalue == '' or quantityvalue == ' ') else quantityvalue
+    quantityvalue = '0' if (quantityvalue == '' or quantityvalue == ' ') else quantityvalue
     pricevalue = input('Enter the Price : ')
-    pricevalue = 'null' if (pricevalue == '' or pricevalue == ' ') else pricevalue
+    pricevalue = '0' if (pricevalue == '' or pricevalue == ' ') else pricevalue
     profitvalue = input('Enter the Profit : ')
-    profitvalue = 'null' if (profitvalue == '' or profitvalue == ' ') else profitvalue
+    profitvalue = '0' if (profitvalue == '' or profitvalue == ' ') else profitvalue
     maxquantityvalue = input('Enter the Max Quantity : ')
-    maxquantityvalue = 'null' if (maxquantityvalue == '' or maxquantityvalue == ' ') else maxquantityvalue
+    maxquantityvalue = '0' if (maxquantityvalue == '' or maxquantityvalue == ' ') else maxquantityvalue
     data[len(data)+1] = {'type': typevalue,'gender':gendervalue,'item_type':itemtypevalue,'item':itemvalue,'quantity':quantityvalue,'price':pricevalue,'profit':profitvalue,'max_quantity':maxquantityvalue}
     writetojson('records.json',data)
     welcome(userIs)
