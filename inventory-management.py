@@ -92,7 +92,7 @@ def buying():
             itemlist = [i['gender'],i["item"],i["price"],i["quantity"]]
             productlist.append(itemlist)
 
-    print(productlist)
+
     for i in range(len(productlist)):
         print("No. : ",i+1,'  ','Gender : ',productlist[i][0],'  ','Item : ',productlist[i][1],"  ",'Price : ',productlist[i][2])
     print('Enter the corresponding numbers of items which you want to buy : ')
@@ -118,15 +118,20 @@ def bill(cart,prodlist):
         cartithvalue = cart[i][1]
         productprice = int(prodlist[cartithkey - 1][2])
         productquantity = int(prodlist[cartithkey - 1][3])
+        if productquantity == 0:
+            print('\nSorry the product ',prodlist[cartithkey - 1][1],' is out of stock')
+            del cart[i]
+            continue
         if cartithvalue > productquantity:
             print('We have ',productquantity," ",prodlist[cartithkey - 1][1]," only.")
-            quantityless = input('Do you want to buy them ? ( y / n) : ')
+            quantityless = input('\nDo you want to buy them ? ( y / n) : ')
             if quantityless == 'y':
                 cart[i][1]= productquantity
                 prodlist[cart[i][0] - 1][3] = 0
                 finalprice.append(productprice * productquantity)
                 continue
             else:
+                del cart[i]
                 continue
         finalprice.append(productprice * cartithvalue)
         prodlist[cartithkey - 1][3] = productquantity - cartithvalue
@@ -188,7 +193,7 @@ def updaterecord():
         attrtoedit = input('Enter the corresponding number : ')
         attrtoeditvalue = input('Enter the new value : ')
         data[itemtoupdate][valuemap[attrtoedit]] = attrtoeditvalue
-        updatemore = input('Do you want to update more ?  :  ')
+        updatemore = input('Do you want to update more ? (y / n) :  ')
     writetojson('records.json',data)
     welcome(userIs)
 
