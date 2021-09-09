@@ -1,5 +1,8 @@
 #THIS PROJECT IS MADE BY REFERING THE INVENTORY OF A COMPANY MAKING CLOTHES
 
+#{"1": {"type": "raw_materials", "gender": "null", "item_type": "thread", "item": "silk_thread", "quantity": "452", "price": "275", "profit": "12", "max_quantity": "500"}, "2": {"type": "raw_materials", "gender": "null", "item_type": "thread", "item": "linen_thread", "quantity": "754", "price": "129", "profit": "9", "max_quantity": "500"}, "3": {"type": "raw_materials", "gender": "null", "item_type": "thread", "item": "polyester_thread", "quantity": "681", "price": "175", "profit": "12", "max_quantity": "500"}, "4": {"type": "raw_materials", "gender": "null", "item_type": "thread", "item": "nylon_thread", "quantity": "782", "price": "165", "profit": "10", "max_quantity": "500"}, "5": {"type": "raw_materials", "gender": "null", "item_type": "dyes", "item": "natural_dye", "quantity": "254", "price": "255", "profit": "5", "max_quantity": "500"}, "6": {"type": "raw_materials", "gender": "null", "item_type": "dyes", "item": "acid_dye", "quantity": "200", "price": "365", "profit": "6", "max_quantity": "500"}, "7": {"type": "raw_materials", "gender": "null", "item_type": "dyes", "item": "all_purpose_dye", "quantity": "356", "price": "240", "profit": "7", "max_quantity": "500"}, "8": {"type": "raw_materials", "gender": "null", "item_type": "fabric", "item": "canvas_fabric", "quantity": "486", "price": "475", "profit": "9", "max_quantity": "500"}, "9": {"type": "raw_materials", "gender": "null", "item_type": "fabric", "item": "cashmere_fabric", "quantity": "400", "price": "499", "profit": "20", "max_quantity": "500"}, "10": {"type": "raw_materials", "gender": "null", "item_type": "fabric", "item": "chiffon_fabric", "quantity": "325", "price": "599", "profit": "20", "max_quantity": "500"}, "11": {"type": "raw_materials", "gender": "null", "item_type": "fabric", "item": "cotton_fabric", "quantity": "587", "price": "500", "profit": "17", "max_quantity": "500"}, "12": {"type": "raw_materials", "gender": "null", "item_type": "fabric", "item": "linen_fabric", "quantity": "596", "price": "465", "profit": "16", "max_quantity": "500"}, "13": {"type": "raw_materials", "gender": "null", "item_type": "fabric", "item": "spandex_fabric", "quantity": "333", "price": "100", "profit": "13", "max_quantity": "500"}, "14": {"type": "raw_materials", "gender": "null", "item_type": "fabric", "item": "velvet_fabric", "quantity": "341", "price": "251", "profit": "18", "max_quantity": "500"}, "15": {"type": "products", "gender": "male", "item_type": "pants", "item": "trousers", "quantity": "0", "price": "399", "profit": "40", "max_quantity": "500"}, "16": {"type": "products", "gender": "male", "item_type": "pants", "item": "jeans", "quantity": "842", "price": "750", "profit": "65", "max_quantity": "500"}, "17": {"type": "products", "gender": "male", "item_type": "pants", "item": "track_pants", "quantity": "579", "price": "400", "profit": "50", "max_quantity": "500"}, "18": {"type": "products", "gender": "male", "item_type": "shirts", "item": "denim_shirt", "quantity": "376", "price": "655", "profit": "65", "max_quantity": "500"}, "19": {"type": "products", "gender": "male", "item_type": "shirts", "item": "t_shirt", "quantity": "944", "price": "350", "profit": "49", "max_quantity": "500"}, "20": {"type": "products", "gender": "male", "item_type": "shirts", "item": "shirt", "quantity": "870", "price": "460", "profit": "44", "max_quantity": "500"}, "21": {"type": "products", "gender": "female", "item_type": "dress", "item": "dress", "quantity": "894", "price": "699", "profit": "65", "max_quantity": "500"}, "22": {"type": "products", "gender": "female", "item_type": "saree", "item": "saree", "quantity": "679", "price": "999", "profit": "100", "max_quantity": "500"}, "23": {"type": "products", "gender": "female", "item_type": "shirts", "item": "t-shirt", "quantity": "451", "price": "599", "profit": "39", "max_quantity": "500"}, "24": {"type": "products", "gender": "female", "item_type": "shirts", "item": "hoodie", "quantity": "296", "price": "500", "profit": "49", "max_quantity": "500"}, "25": {"type": "products", "gender": "female", "item_type": "pants", "item": "jeans", "quantity": "473", "price": "749", "profit": "45", "max_quantity": "500"}, "26": {"type": "products", "gender": "children", "item_type": "shirts", "item": "t_shirt", "quantity": "350", "price": "399", "profit": "35", "max_quantity": "500"}, "27": {"type": "products", "gender": "children", "item_type": "shirts", "item": "polos", "quantity": "144", "price": "299", "profit": "25", "max_quantity": "500"}, "28": {"type": "products", "gender": "children", "item_type": "dress", "item": "dress", "quantity": "555", "price": "350", "profit": "30", "max_quantity": "500"}, "29": {"type": "products", "gender": "children", "item_type": "dress", "item": "frock", "quantity": "475", "price": "540", "profit": "49", "max_quantity": "500"}, "30": {"type": "products", "gender": "children", "item_type": "pants", "item": "denim", "quantity": "256", "price": "280", "profit": "35", "max_quantity": "500"}, "31": {"type": "products", "gender": "children", "item_type": "pants", "item": "jeans", "quantity": "238", "price": "290", "profit": "31", "max_quantity": "500"}, "32": {"type": "products", "gender": "children", "item_type": "pants", "item": "shorts", "quantity": "177", "price": "299", "profit": "25", "max_quantity": "500"}, "33": {"type": "product", "gender": "male", "item_type": "jacket", "item": "jacket", "quantity": "556", "price": "650", "profit": "40", "max_quantity": "750"}, "34": {"type": "product", "gender": "children", "item_type": "pants", "item": "trousers", "quantity": "470", "price": "145", "profit": "20", "max_quantity": "500"}}
+
+
 import json
 from datetime import datetime
 import pytz
@@ -11,8 +14,13 @@ def authenticate():
     userName = input("Enter your user name : ")
     password = input("Enter your password : ")
     return 'trueadmin' if (userName =='admin' and password == 'admin123') else userName
+
 #HERE WE WELCOME THE USER AND DISPLAY THE VARIOUS OPTIONS AVAILABLE TO THEM
+
 def welcome(user):
+    with open("records.json", "r") as f:
+        data = json.load(f)
+        recordsLength = len(data)
     print("\nHello ",user)
     if userIs == "trueadmin":
         print("What do you want to do ?\n1. Display Record\n2. Buy Items\n3. Delete Records\n4. Update Records\n5. Add to Records\n6. Display Sales\n7. Quit")
@@ -22,7 +30,7 @@ def welcome(user):
         elif userchoice == '2':
             buying()
         elif userchoice == '3':
-            deleterecord()
+            deleterecord(data)
         elif userchoice == '4':
             updaterecord()
         elif userchoice == '5':
@@ -82,7 +90,7 @@ def display():
         for i in range(1,int(dispValLen)+1):
             print(data[str(i)]['type'] if ('2' in truelist) else '', data[str(i)]['gender'] if ('3' in truelist) else '', data[str(i)]['item_type'] if ('4' in truelist) else '', data[str(i)]['item'] if ('5' in truelist) else '', data[str(i)]['quantity'] if ('6' in truelist) else '', data[str(i)]['price'] if ('7' in truelist) else '', data[str(i)]['profit'] if ('8' in truelist) else '', data[str(i)]['max_quantity'] if ('9' in truelist) else '')
 
-    welcome(userIs)
+        welcome(userIs)
 
 
 def buying():
@@ -160,10 +168,11 @@ def bill(cart,prodlist):
     writetojson("sales.json",salesrec)
     welcome(userIs)
 
-def deleterecord():
+def deleterecord(data):
     for i in range(len(data)):
+        # print(i + 1, "  ", data.values())
         print(i + 1, "  ", data[str(i + 1)])
-
+    print(data)
     while True:
         popwhichelem = input('Enter the element number (type DELETEALL to delete all record)  :  ')
         if (popwhichelem.isdecimal() and int(popwhichelem) > 0 and int(popwhichelem)< len(data)+1):
@@ -180,6 +189,7 @@ def deleterecord():
         newdataset.update({str(count): i})
         count += 1
     writetojson("records.json",newdataset)
+    data = newdataset
     welcome(userIs)
 
 def updaterecord():
